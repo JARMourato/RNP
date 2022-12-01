@@ -8,7 +8,7 @@
 
 ## Why would I use this?
 
-This library is not meant to be used in isolation, rather it's purpose is to serve as a brdige language between a few different packages that address different aspects of networking on apple platforms.
+This library is not meant to be used in isolation, rather it's purpose is to serve as a bridge language between a few different packages that address different aspects of networking on apple platforms.
 
 ## Installation
 
