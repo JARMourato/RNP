@@ -31,3 +31,11 @@ public extension RequestLoader {
         Response(request: r, result: try await data(for: r))
     }
 }
+
+// MARK: - URLRequest building protocols
+
+public protocol RequestModifier {}
+
+public protocol RequestBuilder: RequestModifier {
+    func mutate(_ request: MutableRequestable) -> MutableRequestable
+}
