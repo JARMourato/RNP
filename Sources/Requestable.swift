@@ -22,11 +22,11 @@ public protocol MutableRequestable: Requestable {
 
 // MARK: - Requestable Loader
 
-public protocol Loader {
+public protocol RequestLoader {
     func data(for r: Requestable) async throws -> DataResponse
 }
 
-public extension Loader {
+public extension RequestLoader {
     func dataResponse<R: Requestable>(for r: R) async throws -> Response<R, DataResponse> {
         Response(request: r, result: try await data(for: r))
     }
