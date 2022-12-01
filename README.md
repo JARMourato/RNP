@@ -3,7 +3,7 @@
 [![Build Status][build status badge]][build status]
 [![codebeat badge][codebeat status badge]][codebeat status]
 [![codeclimate badge][codeclimate status badge]][codeclimate status]
-[![codecov][codecov status badge]][codecov status]
+<!--[![codecov][codecov status badge]][codecov status]-->
 ![Platforms][platforms badge]
 
 ## Why would I use this?
@@ -38,10 +38,10 @@ João ([@_JARMourato](https://twitter.com/_JARMourato))
 
 [build status]: https://github.com/JARMourato/RNP/actions?query=workflow%3ACI
 [build status badge]: https://github.com/JARMourato/RNP/workflows/CI/badge.svg
-[codebeat status]: https://codebeat.co/projects/github-com-jarmourato-RNP-main
-[codebeat status badge]: 
+[codebeat status]: https://codebeat.co/projects/github-com-jarmourato-rnp-main
+[codebeat status badge]: https://codebeat.co/badges/e2025753-f528-4d7c-be57-666b914d66ea
 [codeclimate status]: https://codeclimate.com/github/JARMourato/RNP/maintainability
-[codeclimate status badge]: 
-[codecov status]: https://codecov.io/gh/JARMourato/RNP
-[codecov status badge]: 
+[codeclimate status badge]: https://api.codeclimate.com/v1/badges/d6cf9e6be375d2b57137/maintainability
+<!--[codecov status]: https://codecov.io/gh/JARMourato/RNP-->
+<!--[codecov status badge]: -->
 [platforms badge]: https://img.shields.io/static/v1?label=Platforms&message=iOS%20|%20macOS%20|%20tvOS%20|%20watchOS%20&color=brightgreen
