@@ -19,3 +19,15 @@ public protocol MutableRequestable: Requestable {
     var headers: Headers { get set }
     var parameters: Parameters { get set }
 }
+
+// MARK: - Requestable Loader
+
+public protocol Loader {
+    func data(for r: Requestable) async throws -> DataResponse
+}
+
+public extension Loader {
+    func dataResponse<R: Requestable>(for r: R) async throws -> Response<R, DataResponse> {
+        Response(request: r, result: try await data(for: r))
+    }
+}
