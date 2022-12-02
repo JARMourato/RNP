@@ -27,7 +27,7 @@ public protocol RequestLoader {
 }
 
 public extension RequestLoader {
-    func dataResponse<R: Requestable>(for r: R) async throws -> Response<R, DataResponse> {
+    func response<R: Requestable>(for r: R) async throws -> Response<R, DataResponse> {
         Response(request: r, result: try await data(for: r))
     }
 }
