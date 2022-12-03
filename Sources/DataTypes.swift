@@ -4,11 +4,11 @@ import Foundation
 
 // MARK: - Response Types
 
-public struct Response<Request: Requestable, Data> {
+public struct Response<Request: Requestable, Result> {
     public let request: Request
-    public let result: Data
+    public let result: Result
 
-    public init(request: Request, result: Data) {
+    public init(request: Request, result: Result) {
         self.request = request
         self.result = result
     }
