@@ -17,6 +17,7 @@ extension URLRequest: Requestable {
 public protocol MutableRequestable: Requestable {
     var baseURLString: String? { get set }
     var headers: Headers { get set }
+    var method: String { get }
     var parameters: Parameters { get set }
 }
 
