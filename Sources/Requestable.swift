@@ -39,3 +39,9 @@ public protocol RequestModifier {}
 public protocol RequestBuilder: RequestModifier {
     func mutate(_ request: MutableRequestable) -> MutableRequestable
 }
+
+// MARK: - Response Modifier
+
+public protocol ResponseModifier {
+    func mutate<R: Requestable, Data>(_ response: Response<R, Data>) -> Response<R, Data>
+}
