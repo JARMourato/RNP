@@ -4,11 +4,23 @@ import Foundation
 
 // MARK: - Response Types
 
-public struct Response<Request: Requestable, Result> {
-    public let request: Request
-    public let result: Result
+public struct Metrics {
+    public let startDate: Date
+    public let duration: TimeInterval
 
-    public init(request: Request, result: Result) {
+    public init(startDate: Date, duration: TimeInterval) {
+        self.startDate = startDate
+        self.duration = duration
+    }
+}
+
+public struct Response<Request: Requestable> {
+    public let metrics: Metrics
+    public let result: DataResponse
+    public let request: Request
+
+    public init(request: Request, result: DataResponse, metrics: Metrics) {
+        self.metrics = metrics
         self.request = request
         self.result = result
     }
