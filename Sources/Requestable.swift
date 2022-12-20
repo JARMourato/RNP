@@ -12,8 +12,8 @@ public protocol Requestable {
     func buildURLRequest() throws -> URLRequest
 }
 
-extension Requestable {
-    public var isMultipartRequest: Bool { headers.contains { $0.key.contains("multipart") } }
+public extension Requestable {
+    var isMultipartRequest: Bool { headers.contains { $0.key.contains("multipart") } }
 }
 
 extension URLRequest: Requestable {
@@ -23,7 +23,7 @@ extension URLRequest: Requestable {
             return Set(allHTTPHeaderFields.map(HTTPHeader.init))
         }
         set {
-            var newHeaders: [String:String] = [:]
+            var newHeaders: [String: String] = [:]
             newValue.forEach { newHeaders[$0.key] = $0.value }
             allHTTPHeaderFields = newHeaders
         }
