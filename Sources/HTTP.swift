@@ -3,7 +3,7 @@
 import Foundation
 
 /// Represent the encoding of parameters in an `URLRequest`.
-public struct ParameterEncoding: Hashable {
+public struct ParameterEncoding: Hashable, Sendable {
     public static let json = ParameterEncoding(rawValue: "application/json")
     public static let url = ParameterEncoding(rawValue: "application/x-www-form-urlencoded")
 
@@ -18,7 +18,7 @@ public struct ParameterEncoding: Hashable {
 
 /// Type representing HTTP methods.
 /// See https://tools.ietf.org/html/rfc7231#section-4.3
-public struct HTTPMethod: Hashable {
+public struct HTTPMethod: Hashable, Sendable {
     public static let connect = HTTPMethod(rawValue: "CONNECT")
     public static let delete = HTTPMethod(rawValue: "DELETE")
     public static let get = HTTPMethod(rawValue: "GET")
@@ -36,7 +36,7 @@ public struct HTTPMethod: Hashable {
 }
 
 /// A wrapper type for a set of common HTTP headers.
-public struct HTTPHeader: Hashable {
+public struct HTTPHeader: Hashable, Sendable {
     public static func accept(_ value: String) -> HTTPHeader { HTTPHeader(key: "Accept", value: value) }
     public static func acceptEncoding(_ value: String) -> HTTPHeader { HTTPHeader(key: "Accept-Encoding", value: value) }
     public static func acceptLanguage(_ value: String) -> HTTPHeader { HTTPHeader(key: "Accept-Language", value: value) }
