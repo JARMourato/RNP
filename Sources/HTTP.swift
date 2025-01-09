@@ -38,9 +38,21 @@ public struct HTTPMethod: Hashable {
 /// A wrapper type for a set of common HTTP headers.
 public struct HTTPHeader: Hashable {
     public static func accept(_ value: String) -> HTTPHeader { HTTPHeader(key: "Accept", value: value) }
+    public static func acceptEncoding(_ value: String) -> HTTPHeader { HTTPHeader(key: "Accept-Encoding", value: value) }
+    public static func acceptLanguage(_ value: String) -> HTTPHeader { HTTPHeader(key: "Accept-Language", value: value) }
+    public static func authorization(_ value: String) -> HTTPHeader { HTTPHeader(key: "Authorization", value: value) }
+    public static func authorizationBearer(_ token: String) -> HTTPHeader { HTTPHeader(key: "Authorization", value: "Bearer \(token)") }
     public static func cacheControl(_ value: String) -> HTTPHeader { HTTPHeader(key: "Cache-Control", value: value) }
-    public static func contentLength(_ value: String) -> HTTPHeader { HTTPHeader(key: "Content-Length", value: value) }
+    public static func contentLength(_ value: Int) -> HTTPHeader { HTTPHeader(key: "Content-Length", value: String(value)) }
     public static func contentType(_ value: String) -> HTTPHeader { HTTPHeader(key: "Content-Type", value: value) }
+    public static func cookie(_ value: String) -> HTTPHeader { HTTPHeader(key: "Cookie", value: value) }
+    public static func host(_ value: String) -> HTTPHeader { HTTPHeader(key: "Host", value: value) }
+    public static func ifMatch(_ etag: String) -> HTTPHeader { HTTPHeader(key: "If-Match", value: etag) }
+    public static func ifModifiedSince(_ date: String) -> HTTPHeader { HTTPHeader(key: "If-Modified-Since", value: date) }
+    public static func ifNoneMatch(_ etag: String) -> HTTPHeader { HTTPHeader(key: "If-None-Match", value: etag) }
+    public static func ifUnmodifiedSince(_ date: String) -> HTTPHeader { HTTPHeader(key: "If-Unmodified-Since", value: date) }
+    public static func origin(_ value: String) -> HTTPHeader { HTTPHeader(key: "Origin", value: value) }
+    public static func referer(_ value: String) -> HTTPHeader { HTTPHeader(key: "Referer", value: value) }
     public static func userAgent(_ value: String) -> HTTPHeader { HTTPHeader(key: "User-Agent", value: value) }
 
     public let key: String
